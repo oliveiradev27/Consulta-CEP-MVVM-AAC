@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ConsultaCEPMVVM</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="informacoes_endereco">Informações do Endereço</string>
+    <string name="logradouro">Logradouro</string>
+    <string name="consultar">Consultar</string>
+    <string name="sem_resultados_busca">Não foram encontrados resultados!</string>
+    <string name="cep">CEP:</string>
+    <string name="dica_preenchimento">Ex: 00000000</string>
+    <string name="localidade">Localidade</string>
+    <string name="dados_nao_encontrados">Dados não encontrados!</string>
+    <string name="tentar_novamente">Tentar novamente</string>
+    <string name="campo_obrigatorio">Campo obrigatório!</string>
+</resources>
