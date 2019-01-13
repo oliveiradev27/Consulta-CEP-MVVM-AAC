@@ -17,7 +17,10 @@ class EnderecoViewModel(private val repository: EnderecoRepository) : ViewModel(
 
         repository.getEndereco(cep, object : OnUpdateDataListener<Endereco?> {
            override fun onSucess(data : Endereco?)  {
-                enderecoLiveData.value = data
+               if (data?.logradouro != null)
+                    enderecoLiveData.value = data
+               else
+                   enderecoLiveData.value = null
            }
 
             override fun onFailured(error: String?) {

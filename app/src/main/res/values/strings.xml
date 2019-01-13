@@ -13,4 +13,7 @@
     <string name="dados_nao_encontrados">Dados não encontrados!</string>
     <string name="tentar_novamente">Tentar novamente</string>
     <string name="campo_obrigatorio">Campo obrigatório!</string>
+    <string name="uf">UF</string>
+    <string name="bairro">Bairro</string>
+    <string name="label_cep">CEP</string>
 </resources>

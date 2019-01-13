@@ -39,20 +39,18 @@ class EnderecoFragment : Fragment() {
     }
 
     private fun configureDataInViews(endereco : Endereco) {
-        logradouro.visibility = View.VISIBLE
-        label_logradouro.visibility = View.VISIBLE
-        localidade.visibility = View.VISIBLE
-        label_localidade.visibility = View.VISIBLE
+        text_title.text = getString(R.string.informacoes_endereco)
+        group_data.visibility = View.VISIBLE
         logradouro.text = endereco.logradouro
         localidade.text = endereco.localidade
+        uf.text = endereco.uf
+        bairro.text = endereco.bairro
+        cep.text = endereco.cep
     }
 
     private fun configureEmptyState() {
         text_title.text = getString(R.string.sem_resultados_busca)
-        logradouro.visibility = View.GONE
-        label_logradouro.visibility = View.GONE
-        localidade.visibility = View.GONE
-        label_localidade.visibility = View.GONE
+        group_data.visibility = View.GONE
     }
 
     companion object {
