@@ -5,8 +5,9 @@ import android.arch.lifecycle.ViewModel
 import oliveira.br.consultacepmvvm.interfaces.OnUpdateDataListener
 import oliveira.br.consultacepmvvm.models.Endereco
 import oliveira.br.consultacepmvvm.repository.EnderecoRepository
+import javax.inject.Inject
 
-class EnderecoViewModel(private val repository: EnderecoRepository) : ViewModel() {
+class EnderecoViewModel @Inject constructor(private val repository: EnderecoRepository) : ViewModel() {
 
     private var enderecoLiveData  = MutableLiveData<Endereco>()
 

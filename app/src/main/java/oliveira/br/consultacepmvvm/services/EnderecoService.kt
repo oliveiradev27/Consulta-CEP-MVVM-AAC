@@ -8,6 +8,6 @@ import retrofit2.http.Path
 
 interface EnderecoService {
 
-    @GET("{cep}/json")
+    @GET("{cep}/json/")
     fun getEndereco(@Path("cep") cep : String): Call<Endereco>
 }
