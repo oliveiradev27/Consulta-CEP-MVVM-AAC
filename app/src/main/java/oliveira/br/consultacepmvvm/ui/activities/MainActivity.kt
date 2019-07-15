@@ -1,10 +1,10 @@
 package oliveira.br.consultacepmvvm.ui.activities
 
-import android.arch.lifecycle.Observer
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import oliveira.br.consultacepmvvm.R
 import oliveira.br.consultacepmvvm.application.MyApplication
@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private val manager = supportFragmentManager
     private var fragment : EnderecoFragment? = null
+
     @Inject
     lateinit var viewModel : EnderecoViewModel
 
@@ -29,12 +30,13 @@ class MainActivity : AppCompatActivity() {
         viewModel
             .getEndereco()
             .observe(this, Observer<Endereco>{ endereco ->
-                hideProgressDialog()
                 if (endereco == null)
                     showSearchError()
-                configuraExibicaoEndereco(endereco) })
+                configuraExibicaoEndereco(endereco)
+            })
 
         btn_cep.setOnClickListener{
+            fragment.let { it?.configureLoadingState() }
             consultarCep()
         }
     }
@@ -50,16 +52,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showProgressDialog() {
-        linear_form.visibility = View.GONE
         progress.visibility = View.VISIBLE
     }
 
     private fun hideProgressDialog() {
-        linear_form.visibility = View.VISIBLE
         progress.visibility = View.GONE
     }
 
     private fun configuraExibicaoEndereco(endereco : Endereco?) {
+        hideProgressDialog()
         if (fragment == null) {
             val transaction = manager.beginTransaction()
             fragment = EnderecoFragment.newInstance(endereco)

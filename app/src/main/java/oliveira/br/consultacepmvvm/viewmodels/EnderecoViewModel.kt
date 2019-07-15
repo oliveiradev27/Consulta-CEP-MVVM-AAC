@@ -1,7 +1,7 @@
 package oliveira.br.consultacepmvvm.viewmodels
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import oliveira.br.consultacepmvvm.interfaces.OnUpdateDataListener
 import oliveira.br.consultacepmvvm.models.Endereco
 import oliveira.br.consultacepmvvm.repository.EnderecoRepository

@@ -3,7 +3,8 @@ package oliveira.br.consultacepmvvm.application
 import android.app.Application
 import oliveira.br.consultacepmvvm.di.components.ApplicationComponent
 import oliveira.br.consultacepmvvm.di.components.DaggerApplicationComponent
-import oliveira.br.consultacepmvvm.di.modules.AndroidModule
+import oliveira.br.consultacepmvvm.di.modules.EnderecoViewModelModule
+import oliveira.br.consultacepmvvm.repository.EnderecoNetworkRepository
 
 class MyApplication : Application() {
 
@@ -13,7 +14,9 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        graph = DaggerApplicationComponent.builder().androidModule(AndroidModule(this)).build()
+        graph = DaggerApplicationComponent.builder()
+            .enderecoViewModelModule(EnderecoViewModelModule(EnderecoNetworkRepository()))
+            .build()
         graph.inject(this)
     }
 }

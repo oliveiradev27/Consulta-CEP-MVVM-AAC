@@ -1,7 +1,6 @@
 package oliveira.br.consultacepmvvm.ui.fragments
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,7 @@ import oliveira.br.consultacepmvvm.models.Endereco
 
 private const val ARG_ENDERECO = "endereco"
 
-class EnderecoFragment : Fragment() {
+class EnderecoFragment : androidx.fragment.app.Fragment() {
     private var endereco: Endereco? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +51,12 @@ class EnderecoFragment : Fragment() {
         text_title.text = getString(R.string.sem_resultados_busca)
         group_data.visibility = View.GONE
     }
+
+    fun configureLoadingState() {
+        text_title.text = getString(R.string.loading)
+        group_data.visibility = View.GONE
+    }
+
 
     companion object {
         @JvmStatic

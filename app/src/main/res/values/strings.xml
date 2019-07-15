@@ -16,4 +16,5 @@
     <string name="uf">UF</string>
     <string name="bairro">Bairro</string>
     <string name="label_cep">CEP</string>
+    <string name="loading">Carregando..</string>
 </resources>

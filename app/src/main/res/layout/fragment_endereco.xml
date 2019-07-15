@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_container_address_info"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -115,11 +116,11 @@
             android:layout_marginStart="8dp"
             app:layout_constraintBaseline_toBaselineOf="@+id/label_cep"/>
 
-    <android.support.constraint.Group
+    <androidx.constraintlayout.widget.Group
             android:id="@+id/group_data"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:constraint_referenced_ids="logradouro, label_logradouro,
             localidade, label_localidade, cep, label_cep, uf, label_uf, bairro, label_bairro"/>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
