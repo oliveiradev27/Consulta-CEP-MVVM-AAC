@@ -8,7 +8,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4ClassRunner::class)
-class MainActivityTest {
+class MainActivityEspressoTest {
 
     @get:Rule
     val rule = ActivityTestRule(MainActivity::class.java, false, false)
