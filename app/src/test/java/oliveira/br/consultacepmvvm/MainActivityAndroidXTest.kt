@@ -2,11 +2,14 @@ package oliveira.br.consultacepmvvm
 
 import androidx.lifecycle.Lifecycle
 import androidx.test.core.app.ActivityScenario.launch
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.*
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_endereco.view.*
 import oliveira.br.consultacepmvvm.application.MyApplication
 import oliveira.br.consultacepmvvm.di.components.DaggerApplicationComponent
 import oliveira.br.consultacepmvvm.di.modules.EnderecoViewModelModule
@@ -27,11 +30,8 @@ class MainActivityAndroidXTest {
         mockDependecies()
         val scenario = launch(MainActivity::class.java)
         scenario.moveToState(Lifecycle.State.RESUMED)
-        scenario.onActivity { activity ->
-            activity.et_cep.setText("08280440")
-            activity.btn_cep.performClick()
-            assert(activity.fragment_endereco.logradouro.text.toString() == "Praça da Sé")
-        }
+        onView(withId(R.id.btn_cep)).check(matches(withText( "Consultar")))
+        onView(withId(R.id.btn_cep)).perform(scrollTo(), click())
     }
 
     private fun mockDependecies() {
